@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="row">
+        <<div class="col-md-12">
+            Input 1
+            <input type="text" id="input1">
+            <br> Input 2
+            <input type="text" id="input2">
+            <br>
+            <button id="button" class="btn btn-primary">Show Result</button>
+            <br> Result
+            <input type="text" id="result">
+    </div>
+    </div>
+
+    <script>
+        $(function() { // Routine format; put all your jQuery initialisation inside
+
+            $('#button').click(function() { // Set the mouse click event hander for element "#calculate"
+                // Normal Javascript here
+                // Do whatever you want
+                var amount = $('#input1').val();
+                var unit = $('#input2').val();
+                var total = amount * unit;
+                $('#result').val(total);
+            });
+        }); // Routine format; put all your jQuery initialisation inside
+    </script>
+
+    <h2>Correct below sentence</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <p>I
+                <original> hat</original>
+                <correction>hate</correction>
+                <original> programing</original>
+                <correction>programming</correction>, however
+                <original> pupil</original>
+                <correction>people</correction> nowadays should
+                <original> has</original>
+                <correction>have</correction> basic
+                <original>knewledge</original>
+                <correction>knowledge</correction> for that.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button id="answer" class="btn btn-primary">Show answer</button>
+        </div>
+    </div>
+    <style>
+        correction {
+            background-color: darkcyan;
+            color: white;
+        }
+        
+        .corrected {
+            text-decoration: line-through;
+            background-color: burlywood;
+        }
+    </style>
+    <script>
+        $(function() {
+            var showCorrection = false;
+            $('#answer').click(function() {
+                if (showCorrection) {
+                    $('correction').hide();
+                    $('original').show(); //removeClass('corrected');
+                    showCorrection = false;
+                } else {
+                    $('correction').show();
+                    $('original').hide(); //addClass('corrected');
+                    showCorrection = true;
+                }
+            });
+            $('correction').hide();
+        })
+    </script>
+
+    <h2>Move the bar chart in a batch</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="myfigure" class="chart">
+                <div class="bar-block" style="height: 80px; left:5"> 80 </div>
+                <div class="bar-block" style="height: 60px; left:45px"> 60 </div>
+                <div class="bar-block" style="height: 90px; left:85px"> 90 </div>
+                <div class="bar-block" style="height: 110px; left:125px"> 110 </div>
+                <div class="bar-block" style="height: 20px; left:165px"> 20 </div>
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-12 ">
+            <button id="add" class="btn btn-primary "> Add Oil! </button>
+        </div>
+    </div>
+    <style>
+        .bar-block {
+            background-color: pink;
+            color: lightcoral;
+            text-align: center;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            position: absolute;
+            width: 30px;
+            bottom: 0;
+        }
+        
+        .chart {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 1px solid;
+            margin-bottom: 10px;
+        }
+    </style>
+</body>
+
+</html>
